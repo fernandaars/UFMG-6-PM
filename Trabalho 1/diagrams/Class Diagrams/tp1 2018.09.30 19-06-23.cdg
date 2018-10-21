@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tp1">
+  <ClassDiagramComponents>
+    <Class name="Knight" package="tp1" visibility="public" xPosition="862.0" yPosition="31.0">
+      <Fields>
+        <Field name="currentPosition" type="Square" visibility="package"/>
+        <Field name="numPossibleMoves" type="int" visibility="package"/>
+        <Field name="possibleMoves" type="Square" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Square" name="firstPosition"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setPossibleMoves" returnType="void" visibility="public" isFinal="true"/>
+        <Method name="move" returnType="boolean" visibility="package">
+          <Argument type="Square" name="finalPosition"/>
+        </Method>
+        <Method name="getAdjacencyDegree" returnType="int" visibility="package">
+          <Argument type="Chessboard" name="cBoard"/>
+          <Argument type="Square" name="coordinate"/>
+        </Method>
+        <Method name="passedAllSquares" returnType="boolean" visibility="package">
+          <Argument type="Chessboard" name="cBoard"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="WarnsdorffAlgorithm" package="tp1" visibility="public" xPosition="355.0" yPosition="149.0">
+      <Fields>
+        <Field name="numOfMoves" type="int" visibility="package"/>
+        <Field name="chesspiece" type="Knight" visibility="package"/>
+        <Field name="cBoard" type="Chessboard" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Knight" name="chesspiece"/>
+          <Argument type="Chessboard" name="cBoard"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="nextMove" returnType="boolean" visibility="package"/>
+        <Method name="findSolution" returnType="boolean" visibility="package">
+          <Argument type="Square" name="firstPosition"/>
+          <Argument type="int" name="sizeOfBoard"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Tp1" package="tp1" visibility="public" xPosition="956.0" yPosition="360.0">
+      <Fields>
+        <Field name="chesspiece" type="Knight" visibility="private" isStatic="true"/>
+        <Field name="cBoard" type="Chessboard" visibility="private" isStatic="true"/>
+        <Field name="solution" type="WarnsdorffAlgorithm" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Square" package="tp1" visibility="public" xPosition="119.0" yPosition="31.0">
+      <Fields>
+        <Field name="x" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Chessboard" package="tp1" visibility="public" xPosition="53.0" yPosition="309.0">
+      <Fields>
+        <Field name="size" type="int" visibility="package"/>
+        <Field name="positions" type="int[][]" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="size"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="cleanChessboard" returnType="void" visibility="package" isFinal="true"/>
+        <Method name="printChessboard" returnType="void" visibility="package"/>
+        <Method name="isNotBorder" returnType="boolean" visibility="package">
+          <Argument type="Square" name="coordinate"/>
+        </Method>
+        <Method name="isUnvisited" returnType="boolean" visibility="package">
+          <Argument type="Square" name="coordinate"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="possibleMoves" source="tp1.Knight" target="tp1.Square" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="solution" source="tp1.Tp1" target="tp1.WarnsdorffAlgorithm" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cBoard" source="tp1.Tp1" target="tp1.Chessboard" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="chesspiece" source="tp1.Tp1" target="tp1.Knight" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp1.Chessboard" target="tp1.Square" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cBoard" source="tp1.WarnsdorffAlgorithm" target="tp1.Chessboard" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="chesspiece" source="tp1.WarnsdorffAlgorithm" target="tp1.Knight" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tp1.Knight" target="tp1.Square" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="currentPosition" source="tp1.Knight" target="tp1.Square" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

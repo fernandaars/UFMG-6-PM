@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="at2">
+  <ClassDiagramComponents>
+    <Class name="TestCircle" package="at2" visibility="public" xPosition="224.0" yPosition="45.0">
+      <Fields>
+        <Field name="c1" type="Circle" visibility="package" isStatic="true"/>
+        <Field name="c2" type="Circle" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Circle" package="at2" visibility="public" xPosition="549.0" yPosition="20.0">
+      <Fields>
+        <Field name="radius" type="double" visibility="private"/>
+        <Field name="color" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="double" name="radius"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRadius" returnType="double" visibility="public"/>
+        <Method name="getArea" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="c2" source="at2.TestCircle" target="at2.Circle" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c1" source="at2.TestCircle" target="at2.Circle" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

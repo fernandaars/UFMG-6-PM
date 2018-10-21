@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="at2">
+  <ClassDiagramComponents>
+    <Class name="TestCircle" package="at2" visibility="public" xPosition="1059.0" yPosition="97.0">
+      <Fields>
+        <Field name="c1" type="Circle" visibility="package" isStatic="true"/>
+        <Field name="c2" type="Circle" visibility="package" isStatic="true"/>
+        <Field name="c3" type="Circle" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Point" package="at2" visibility="public" xPosition="352.0" yPosition="46.0">
+      <Fields>
+        <Field name="x" type="float" visibility="private"/>
+        <Field name="y" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="float" name="x"/>
+          <Argument type="float" name="y"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getX" returnType="float" visibility="public"/>
+        <Method name="setX" returnType="void" visibility="public">
+          <Argument type="float" name="x"/>
+        </Method>
+        <Method name="getY" returnType="float" visibility="public"/>
+        <Method name="setY" returnType="void" visibility="public">
+          <Argument type="float" name="y"/>
+        </Method>
+        <Method name="setCoordinates" returnType="void" visibility="public">
+          <Argument type="float" name="x"/>
+          <Argument type="float" name="y"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Circle" package="at2" visibility="public" xPosition="670.0" yPosition="20.0">
+      <Fields>
+        <Field name="radius" type="double" visibility="private"/>
+        <Field name="color" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="double" name="radius"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="color"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="double" name="radius"/>
+          <Argument type="String" name="color"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="double" name="radius"/>
+          <Argument type="String" name="color"/>
+          <Argument type="float" name="x"/>
+          <Argument type="float" name="y"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRadius" returnType="double" visibility="public"/>
+        <Method name="getColor" returnType="String" visibility="public"/>
+        <Method name="setRadius" returnType="void" visibility="public">
+          <Argument type="double" name="radius"/>
+        </Method>
+        <Method name="setColor" returnType="void" visibility="public">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="getArea" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Triangle" package="at2" visibility="public" xPosition="294.0" yPosition="320.0">
+      <Fields>
+        <Field name="sides" type="double[]" visibility="private"/>
+        <Field name="vertices" type="Point[]" visibility="private"/>
+        <Field name="type" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="double" name="sideA"/>
+          <Argument type="double" name="sideB"/>
+          <Argument type="double" name="sideC"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Point" name="verticeA"/>
+          <Argument type="Point" name="verticeB"/>
+          <Argument type="Point" name="verticeC"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPerimeter" returnType="double" visibility="public"/>
+        <Method name="getArea" returnType="double" visibility="public"/>
+        <Method name="typeOfTriangle" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="at2.Circle" target="at2.Point"/>
+    <HasRelation name="c3" source="at2.TestCircle" target="at2.Circle" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c2" source="at2.TestCircle" target="at2.Circle" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c1" source="at2.TestCircle" target="at2.Circle" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
